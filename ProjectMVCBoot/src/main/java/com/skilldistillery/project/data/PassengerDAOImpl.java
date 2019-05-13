@@ -22,7 +22,34 @@ public class PassengerDAOImpl implements PassengerDAO {
 		Passenger p = em.find(Passenger.class, id);
 		return p;
 	}
-
+	@Override
+	public List<Passenger> getPassengerByKeyword(String keyword) {
+		String query = "Select p from Passenger p where p.firstName like :name or p.lastName like :name";
+		
+		List<Passenger> p = em.createQuery(query, Passenger.class).setParameter("name", "%"+keyword+"%").getResultList();
+		return p;
+	}
+	@Override
+	public List<Passenger> getAllPassengersOrderByFirstName() {
+		String query = "Select p from Passenger p order by firstName";
+		
+		List<Passenger> p = em.createQuery(query, Passenger.class).getResultList();
+		return p;
+	}
+	@Override
+	public List<Passenger> getAllPassengersOrderByLastName() {
+		String query = "Select p from Passenger p order by lastName";
+		
+		List<Passenger> p = em.createQuery(query, Passenger.class).getResultList();
+		return p;
+	}
+	@Override
+	public List<Passenger> getAllPassengersOrderByAge() {
+		String query = "Select p from Passenger p order by age";
+		
+		List<Passenger> p = em.createQuery(query, Passenger.class).getResultList();
+		return p;
+	}
 	@Override
 	public List<Passenger> getAllPassengers() {
 		String query = "Select passenger from Passenger passenger";
@@ -47,6 +74,7 @@ public class PassengerDAOImpl implements PassengerDAO {
 	@Override
 	public Passenger updatePassenger(Passenger p) {
 		Passenger passenger = em.find(Passenger.class, p.getId());
+		passenger.setId(p.getId());
 		passenger.setFirstName(p.getFirstName());
 		passenger.setLastName(p.getLastName());
 		passenger.setAge(p.getAge());
@@ -61,8 +89,8 @@ public class PassengerDAOImpl implements PassengerDAO {
 	@Override
 	public Passenger deletePassenger(Passenger p) {
 		Passenger passenger = em.find(Passenger.class, p.getId());
+		
 		em.remove(passenger);
-		em.persist(passenger);
 		
 		return passenger;
 	}

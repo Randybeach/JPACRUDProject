@@ -1,0 +1,36 @@
+@charset "UTF-8";
+.form-control{
+	background-color:whiteSmoke;
+	 border:1px solid #cccccc;
+    vertical-align:top;
+    max-height:250px;
+    overflow:scroll;
+}
+header.masthead {
+  position: relative;
+  background-color: #343a40;
+  background: url(img/plane.jpg) no-repeat center center;
+  background-size: cover;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  min-height: 600px;
+}
+header.masthead1 {
+  position: relative;
+  background-color: #343a40;
+  background: url(img/plane.jpg) no-repeat center center;
+  background-size: cover;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  min-height: 100px;
+}
+.list-group{
+	background-color:whiteSmoke;
+	 border:1px solid #cccccc;
+    vertical-align:top;
+    max-height:350px;
+    overflow:scroll;
+}
+.btn{
+	display:inline;
+}

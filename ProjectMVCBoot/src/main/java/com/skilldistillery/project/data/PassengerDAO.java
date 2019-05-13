@@ -11,5 +11,9 @@ public interface PassengerDAO {
 	public Passenger addPassenger(Passenger p);
 	Passenger updatePassenger(Passenger p);
 	Passenger deletePassenger(Passenger p);
+	List<Passenger> getPassengerByKeyword(String keyword);
+	List<Passenger> getAllPassengersOrderByFirstName();
+	List<Passenger> getAllPassengersOrderByLastName();
+	List<Passenger> getAllPassengersOrderByAge();
 	
 }

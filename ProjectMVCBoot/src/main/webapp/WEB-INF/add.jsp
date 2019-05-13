@@ -8,10 +8,10 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel='stylesheet' href='Style.css'>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -24,20 +24,56 @@
       <li class="nav-item1 active">
         <a class="nav-link" href="add.do">New Passenger</a>
       </li>
-      <li class="nav-item2">
-        <a class="nav-link" href="allPassengers.do">All Passengers</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="allPassengers.do?num=1" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          All Passengers
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="allPassengers.do?num=1">By Flight Number</a>
+          <a class="dropdown-item" href="allPassengers.do?num=2">By First Name</a>
+          <a class="dropdown-item" href="allPassengers.do?num=3">By Last Name</a>
+          <a class="dropdown-item" href="allPassengers.do?num=4">By Age</a>
+        </div>
       </li>
       <li class="nav-item3">
         <a class="nav-link" href="#"></a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0" action="getPassenger.do" method="get">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="id">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="keyword">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
 </nav>
-
+<header class="masthead1 text-white text-center">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <h1 class="mb-5">Come Fly With Us</h1>
+          </div>
+          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+            <form>
+              <div class="form-row">
+                <div class="col-12 col-md-9 mb-2 mb-md-0">
+                 <!--  <input type="email" class="form-control form-control-lg" placeholder="Enter your email..."> -->
+                </div>
+                <div class="col-12 col-md-3">
+                  <!-- <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button> -->
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div> 
+    </header>
+    
+<c:if test="${not empty error }">
+<div style="color:red">
+<h4>Not a valid passenger.</h4>
+</div>
+</c:if>
+<div class = "container">
 <form:form action = "addPassenger.do" modelAttribute="passenger" method="POST">
   <div class="form-row">
     <div class="form-group col-md-6">
@@ -52,13 +88,12 @@
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputCity">Country</label>
-      <form:input type="text" class="form-control" id="inputCity" path="country"/>
+      <form:input type="text" class="form-control" id="inputCity" path="country" placeholder="USA"/>
     </div>
     <div class="form-group col-md-4">
       <label for="inputState">Age</label>
-      <form:select id="inputState" class="form-control" path="age">
-      <option selected>Choose...</option>
-        <option>1</option>
+      <form:select id="inputAge" class="form-control" path="age" style="max-height:250px">
+      <option selected>1</option>
         <option>2</option>
         <option>3</option>
         <option>4</option>
@@ -82,15 +117,97 @@
         <option>22</option>
         <option>23</option>
         <option>24</option>
+        <option>25</option>
+        <option>26</option>
+        <option>27</option>
+        <option>28</option>
+        <option>29</option>
+        <option>30</option>
+        <option>31</option>
+        <option>32</option>
+        <option>33</option>
+        <option>34</option>
+        <option>35</option>
+        <option>36</option>
+        <option>37</option>
+        <option>38</option>
+        <option>39</option>
+        <option>40</option>
+        <option>41</option>
+        <option>42</option>
+        <option>43</option>
+        <option>44</option>
+        <option>45</option>
+        <option>46</option>
+        <option>47</option>
+        <option>48</option>
+        <option>49</option>
+        <option>50</option>
+        <option>51</option>
+        <option>52</option>
+        <option>53</option>
+        <option>54</option>
+        <option>55</option>
+        <option>56</option>
+        <option>57</option>
+        <option>58</option>
+        <option>59</option>
+        <option>60</option>
+        <option>61</option>
+        <option>62</option>
+        <option>63</option>
+        <option>64</option>
+        <option>65</option>
+        <option>66</option>
+        <option>67</option>
+        <option>68</option>
+        <option>69</option>
+        <option>70</option>
+        <option>71</option>
+        <option>72</option>
+        <option>73</option>
+        <option>74</option>
+        <option>75</option>
+        <option>76</option>
+        <option>77</option>
+        <option>78</option>
+        <option>79</option>
+        <option>80</option>
+        <option>81</option>
+        <option>82</option>
+        <option>83</option>
+        <option>84</option>
+        <option>85</option>
+        <option>86</option>
+        <option>87</option>
+        <option>88</option>
+        <option>89</option>
+        <option>90</option>
+        <option>91</option>
+        <option>92</option>
+        <option>93</option>
+        <option>94</option>
+        <option>95</option>
+        <option>96</option>
+        <option>97</option>
+        <option>99</option>
+        <option>99</option>
+        <option>100</option>
+        <option>101</option>
+        <option>102</option>
+        <option>103</option>
+        <option>104</option>
+        <option>105</option>
       </form:select>
     </div>
     <div class="form-group col-md-2">
       <label for="inputZip">Passport Number</label>
-      <form:input type="text" class="form-control" id="inputZip" path="passport"/>
+      <form:input type="text" class="form-control" id="inputZip" path="passport" placeholder="000"/>
     </div>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form:form>
+</div>
 
 
 

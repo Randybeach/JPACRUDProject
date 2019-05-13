@@ -8,11 +8,11 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <meta charset="UTF-8">
 <title>Passenger</title>
-
+<link rel='stylesheet' href='Style.css'>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
+  
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -20,24 +20,55 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="home.do">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="home.do"><strong>Home</strong><span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item1">
         <a class="nav-link" href="add.do">New Passenger</a>
       </li>
-      <li class="nav-item2">
-        <a class="nav-link" href="allPassengers.do">All Passengers</a>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="allPassengers.do?num=1" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          All Passengers
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="allPassengers.do?num=1">By Flight Number</a>
+          <a class="dropdown-item" href="allPassengers.do?num=2">By First Name</a>
+          <a class="dropdown-item" href="allPassengers.do?num=3">By Last Name</a>
+          <a class="dropdown-item" href="allPassengers.do?num=4">By Age</a>
+        </div>
       </li>
       <li class="nav-item3">
         <a class="nav-link" href="#"></a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0" action="getPassenger.do" method="get">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="id">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="keyword">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
 </nav>
+
+   <header class="masthead text-white text-center">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <h1 class="mb-5">Come Fly With Us</h1>
+          </div>
+          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+            <form>
+              <div class="form-row">
+                <div class="col-12 col-md-9 mb-2 mb-md-0">
+                 <!--  <input type="email" class="form-control form-control-lg" placeholder="Enter your email..."> -->
+                </div>
+                <div class="col-12 col-md-3">
+                  <!-- <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button> -->
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div> 
+    </header>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
